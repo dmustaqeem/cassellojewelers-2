@@ -13,9 +13,6 @@ import { useUserContext } from "../context/user_context";
 //import { useDispatch } from 'react-redux';
 // import { logoutUser } from './redux/actions'; 
 
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-
 
 const LoginPage = () => {
   const [LoginPage, setLoginPage] = useState(true);
@@ -28,21 +25,6 @@ const LoginPage = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
 
   const { loginWithRedirect, logout, myUser } = useUserContext();
-  const [PasswordVisibility,setPasswordVisibility] = useState(true);
-
-  const [SignUpPasswordVisibility,setSignUpPasswordVisibility] = useState(true);
-  const [SignUpRepeatPasswordVisibility,setSignUpRepeatPasswordVisibility] = useState(true);
-  
-  
-  
-  function RepeatEyeClicked (){
-    setSignUpRepeatPasswordVisibility(!SignUpRepeatPasswordVisibility);
-  }
-  function SignUpEyeClicked(){
-    setSignUpPasswordVisibility(!SignUpPasswordVisibility);
-  
-  }
-  
   //const dispatch = useDispatch();
 
 
@@ -65,9 +47,6 @@ const LoginPage = () => {
     setOpen(true);
   };
 
-  function EyeClicked (){
-    setPasswordVisibility(!PasswordVisibility);
-  }
 
   function GetRegisteredClicked() {
     console.log("Here")
@@ -205,20 +184,13 @@ const LoginPage = () => {
               value={username}
               onChange={handleUsernameChange}
             />
-            <div className="PasswordHolder">
             <input
-               type={!PasswordVisibility ? 'text' : 'password'}
+              type="text"
               placeholder="Password"
-              className="InputField3"
+              className="InputField"
               value={password}
               onChange={handlePasswordChange}
             />
-         
-            {PasswordVisibility ? 
-               <VisibilityOffIcon className="EyeIcon" onClick={EyeClicked}/>
-            : 
-            <RemoveRedEyeIcon className="EyeIcon" onClick={EyeClicked}/>}
-            </div>
             <div>
               <p className="promptText">
                 Not Registered ?
@@ -281,32 +253,20 @@ const LoginPage = () => {
             </div>
 
             <div className="InputHolder">
-              <div className="PasswordHolder">
               <input
-                type={!SignUpPasswordVisibility ? 'text' : 'password'}
+                type="text"
                 placeholder="Password"
-                className="InputField3"
+                className="InputField"
                 value={password}
                 onChange={handlePasswordChange}
               />
-               {SignUpPasswordVisibility ? 
-               <VisibilityOffIcon className="EyeIcon" onClick={SignUpEyeClicked}/>
-            : 
-            <RemoveRedEyeIcon className="EyeIcon" onClick={SignUpEyeClicked}/>}
-              </div>
-              <div className="PasswordHolder">
               <input
-                type={!SignUpRepeatPasswordVisibility ? 'text' : 'password'}
+                type="text"
                 placeholder="Repeat Password"
-                className="InputField3"
+                className="InputField"
                 value={repeatPassword}
                 onChange={handleRepeatPasswordChange}
               />
-               {SignUpRepeatPasswordVisibility ? 
-               <VisibilityOffIcon className="EyeIcon" onClick={RepeatEyeClicked}/>
-            : 
-            <RemoveRedEyeIcon className="EyeIcon" onClick={RepeatEyeClicked}/>}
-              </div>
             </div>
 
             <div className="AlternativeOption">
@@ -356,21 +316,6 @@ const Wrapper = styled.div`
   background: #eeeeee;
   font-family: "Century Gothic", sans-serif;
   padding-bottom: 10%;
-
-  .PasswordHolder{
-    position:relative;
-    width: 45%;
-    height: 55px;
-    display:flex;
-    justify-content:center;
-    margin-top:5%;
-  }
-  .EyeIcon{
-    position:absolute;
-    right:3%;
-    top:25%;
-    font-size:30px;
-  }
 
   .Holder {
     height: 100%;
@@ -460,16 +405,6 @@ const Wrapper = styled.div`
     font-size: 15px;
     margin-top: 5%;
   }
-  .InputField3 {
-    height: 55px;
-    width: 100%;
-    border-radius: 5px;
-    padding-left: 2%;
-    outline: none;
-    border: none;
-    background-color: rgb(0, 0, 0, 0.1);
-    font-size: 15px;
-  }
   .LoginButton {
     height: 50px;
     width: 200px;
@@ -557,10 +492,6 @@ const Wrapper = styled.div`
       width: 90%;
       padding: 5%;
     }
-    .PasswordHolder{
-      width: 100%;
-     
-    }
     .InputHolder {
       width: 85%;
       flex-direction: column;
@@ -568,10 +499,6 @@ const Wrapper = styled.div`
       justify-content: center;
     }
     .InputField {
-      width: 100%;
-      padding-left: 2.5%;
-    }
-    .InputField3 {
       width: 100%;
       padding-left: 2.5%;
     }

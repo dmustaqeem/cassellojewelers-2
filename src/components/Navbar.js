@@ -208,12 +208,10 @@ const Nav = () => {
                   </li>
                 )}
               </Menu> */}
-              <div className='icon'>
-                <Link to="/LoginPage">
+              <div className='icon' onClick={loginWithRedirect}>
                 <p>
                   <p className='icon-menu'>Login</p>
                 </p>
-                </Link>
               </div>
              
             </>
@@ -274,7 +272,7 @@ const NavContainer = styled.nav`
 
   .HeaderText{
     font-size:20px;
-    
+    padding:10%;
     font-weight:100;
     color:#222831;
     &:hover {
