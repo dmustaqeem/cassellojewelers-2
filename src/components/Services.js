@@ -13,7 +13,7 @@ const Services = () => {
         <Grid item lg={9}>
           <div>
             <Grid container gap={2}>
-              <Grid item lg={6} sm={12}>
+              <Grid item lg={6} sm={12} md={12}>
                 <div>
                   <img
                     className="Image"
@@ -21,7 +21,7 @@ const Services = () => {
                   />
                 </div>
               </Grid>
-              <Grid item lg={5.8}>
+              <Grid item lg={5.8} md={12}>
                 <div className="TextHolder">
                   <p className="Title">Designed for Those Who Evade Limits</p>
                   <p className="SubTitle">

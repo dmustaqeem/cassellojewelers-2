@@ -80,7 +80,7 @@ const SingleAuctionProductPage = () => {
             >
               {ImageLink.map((Item, index) => {
                 return (
-                  <SwiperSlide>
+                  <SwiperSlide className="SwiperSlide">
                     <img src={Item.Link} className="SwiperImage" />
                   </SwiperSlide>
                 );
@@ -224,6 +224,9 @@ const Wrapper = styled.main`
   .SwiperHolder {
     height: 80vh;
   }
+  .SwiperSlide{
+    width:450px;
+  }
   
   /* Style for Custom Navigation Buttons */
  
@@ -287,13 +290,14 @@ const Wrapper = styled.main`
       width:90%;
     }
   }
-  @media (min-width: 800px) and (max-width: 1200px) {
+  @media (min-width: 767px) and (max-width: 1200px) {
     margin-top:80px;
     
     .InfoHolder{
       height:100%;
       padding:5%;
     }
+    
   }
 `;
 
