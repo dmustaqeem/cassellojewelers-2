@@ -11,9 +11,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useUserContext } from "../context/user_context";
 import { useNavigate } from 'react-router-dom';
 
-//import { useDispatch } from 'react-redux';
-// import { logoutUser } from './redux/actions'; 
-
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
@@ -46,20 +43,6 @@ const LoginPage = () => {
     setSignUpPasswordVisibility(!SignUpPasswordVisibility);
 
   }
-
-  //const dispatch = useDispatch();
-
-
-  // const handleLogin = () => {
-  //   loginWithRedirect(); // Initiate Auth0 login
-  // };
-
-  // const handleLogout = () => {
-  //   logout(); 
-  //   dispatch(logoutUser()); 
-  // };
-
-
 
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
@@ -222,7 +205,6 @@ const LoginPage = () => {
                 </p>
               </div>
 
-              {/* <Link to={!ToggleBoolean ? "/UserHomePage" : "/AdminHomePage"}> */}
               <Button variant="outlined" className="LoginButton" onClick={async () => {
                 setOpen(true);
 
@@ -234,7 +216,13 @@ const LoginPage = () => {
                     console.log("Here")
                     localStorage.setItem('userName', user.userName);
                     localStorage.setItem('userVerification', user.verified);
-                    //handleLogin();
+
+                    localStorage.setItem('userAddress', user.address);
+                    localStorage.setItem('userCity', user.city);
+                    localStorage.setItem('userProvince', user.province);
+                    localStorage.setItem('userCountry', user.country);
+                    localStorage.setItem('userPostCode', user.postCode);
+
                     navigate('/');
                   }
                 }
@@ -252,7 +240,6 @@ const LoginPage = () => {
               }}>
                 Proceed
               </Button>
-              {/* </Link> */}
 
             </div>
           ) : (

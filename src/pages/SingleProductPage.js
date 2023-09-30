@@ -31,7 +31,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-    // eslint-disable-next-line
+    console.log(url + id);
   }, [id]);
   useEffect(() => {
     if (error) {
@@ -39,7 +39,6 @@ const SingleProductPage = () => {
         navigate("/");
       }, 3000);
     }
-    // eslint-disable-next-line
   }, [error]);
   if (loading) {
     return <Loading />;
@@ -69,26 +68,22 @@ const SingleProductPage = () => {
           </Button>
         </Link>
         <div className="product-center">
-          <ProductImages images={images} />
+          <ProductImages images={product.image} />
           <section className="content">
             <p className="NameTag">{name}</p>
             {/* <Stars stars={stars} reviews={reviews} /> */}
             <h5 className="price">{formatPrice(85000)}</h5>
             <p className="desc">{description}</p>
-            <p className="info">
+            {/* <p className="info">
               <span>Available : </span>
               {stock > 0 ? "In stock" : "out of stock"}
-            </p>
+            </p> */}
             <p className="info">
               <span>SKU :</span>
               {sku}
             </p>
-            {/* <p className="info">
-              <span>Brand :</span>
-              {company}
-            </p> */}
             <hr />
-            {stock > 0 && <AddToCart product={product} />}
+            <AddToCart product={product} />
           </section>
         </div>
       </div>
