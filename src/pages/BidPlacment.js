@@ -282,8 +282,5 @@ position:relative;
 }
 
 }
-
-}
-
 `
 export default BidPlacement;

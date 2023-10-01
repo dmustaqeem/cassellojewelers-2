@@ -7,16 +7,18 @@ import AdminBuyingHistory from "../../components/AdminComponents/AdminBuyHistory
 import AddProduct from "../../components/AdminComponents/AddProduct";
 import AddAuctionProduct from "../../components/AdminComponents/AddAuctionProduct";
 import Nav from "../../components/Navbar";
+import Support from "../../components/AdminComponents/Support";
+import Resources from "../../components/AdminComponents/Resources";
 
 
 
 const AdminHomePage = () => {
   const [CurrentScreen, setCurrentScreen] = useState(1);
-  
+
   const handleValueUpdate = (newValue) => {
     setCurrentScreen(newValue);
   };
-  
+
 
   function ScreenDisplay() {
     if (CurrentScreen === 1) {
@@ -28,25 +30,34 @@ const AdminHomePage = () => {
     if (CurrentScreen === 3) {
       return <AdminBuyingHistory />;
     }
-    
+
+    if (CurrentScreen === 6) {
+      return <Support />;
+    }
+
+
+    if (CurrentScreen === 7) {
+      return <Resources />;
+    }
+
   }
 
 
   return (
     <>
-    <Navbar/>
-    <Wrapper>
-    
+      <Navbar />
+      <Wrapper>
+
 
         <div className="FlexRowDiv">
           <AdminSideBar updateParentValue={handleValueUpdate} />
-         <div className="ScreenHolder">  
-         {ScreenDisplay()}
-         </div>
+          <div className="ScreenHolder">
+            {ScreenDisplay()}
+          </div>
           <div className="LightEffect"></div>
         </div>
-    
-    </Wrapper>
+
+      </Wrapper>
     </>
   );
 };

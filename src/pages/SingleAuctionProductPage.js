@@ -70,7 +70,6 @@ const SingleAuctionProductPage = () => {
           <div className="SwiperHolder">
             
             <Swiper
-              navigation={true}
               modules={[Navigation]}
               navigation={{
                 nextEl: '.custom-swiper-button-next', // Custom class for "Next" button
