@@ -302,6 +302,7 @@ const BuyHistoryTable = () => {
               setDescription(event.target.value);
             }} />
 
+<div>
             <Button
               varient="contained"
               className="ColoredButton" onClick={UploadProductClicked}>
@@ -325,6 +326,7 @@ const BuyHistoryTable = () => {
             >
               Go Back
             </Button>
+            </div>
             
           </div>
         </Wrapper2>
@@ -565,7 +567,7 @@ const Wrapper2 = styled.section`
         width:90%;  
       }
       .NameInput2{
-        width:95%;
+        width:85%;
        
       }
       .ImageUpload{

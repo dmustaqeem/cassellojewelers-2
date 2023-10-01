@@ -101,7 +101,8 @@ const AddProduct = () => {
                   className="NameInput2"
                   value={image}
                   onChange={(event) => handleImageChange(event, index)}
-                />
+                >
+                </input>
                 <button
                   className="RemoveImageButton"
                   onClick={() => handleRemoveImage(index)}
@@ -218,6 +219,9 @@ const Wrapper = styled.section`
     color: #1c1f25;
     margin-left: 5%;
   }
+  .ImageInput{
+    position:relative;
+  }
   .SubTitleText{
     font-size: 25px;
     margin-bottom:0px;
@@ -273,6 +277,7 @@ const Wrapper = styled.section`
     font-size: 15px;
     cursor: pointer;
     margin-left: 5px;
+    right:5%;
   }
 
 
@@ -405,7 +410,7 @@ const Wrapper = styled.section`
         width:90%;  
       }
       .NameInput2{
-        width:95%;
+        width:80%;
        
       }
       .ImageUpload{
