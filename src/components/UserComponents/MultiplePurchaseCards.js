@@ -109,7 +109,6 @@ font-family: "Century Gothic", sans-serif;
   align-items: center;
   justify-content:space-evenly;
   align-content: center;
-  padding-right: 5%;
   width:100%;
   padding-bottom:5%;
 
@@ -128,13 +127,11 @@ font-family: "Century Gothic", sans-serif;
     align-content: center;
     align-items: center;
     width: 100%;
-    padding-right: 2.5%;
   }
   
   
   @media (min-width: 800px) and (max-width: 1400px){
-    width:660;
-    padding-right: 0%;
+    
   }
 
 `;
